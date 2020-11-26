@@ -1,0 +1,7 @@
+<page>
+   <item name="test/TestScene.scene" props="" ifExport="分离模式" aName=""/>
+   <item name="Backpack.scene" props="" ifExport="文件模式" aName="Backpack1"/>
+   <item name="test/Alert.scene" props="" ifExport="内嵌模式" aName=""/>
+   <item name="test/RolePanel.scene" props="" ifExport="内嵌模式" aName=""/>
+   <item name="test/Backpack.scene" props="" ifExport="内嵌模式" aName=""/>
+</page>
