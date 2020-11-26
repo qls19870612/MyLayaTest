@@ -86,10 +86,21 @@ const tasks = {
 if (!useOtherNode() && process.argv.length > 5 && process.argv[4] == "--config") {
 	platform = process.argv[5].replace(".json", "");
 }
-if (useOtherNode() && process.argv.length >= 4 && process.argv[3].startsWith("--config") && process.argv[3].endsWith(".json")) {
-	platform = process.argv[3].match(/(\w+).json/)[1];
-	platformCopyTask.push(copyTasks[platform]);
-	platformTask.push(tasks[platform]);
+if (!useOtherNode()) {
+	if(process.argv.length >= 4 && process.argv[3].startsWith("--config") && process.argv[4].endsWith(".json"))
+	{
+		platform = process.argv[4].match(/(\w+).json/)[1];
+		platformCopyTask.push(copyTasks[platform]);
+		platformTask.push(tasks[platform]);
+	}
+}
+else {
+	if(process.argv.length >= 4 && process.argv[3].startsWith("--config") && process.argv[3].endsWith(".json"))
+	{
+		platform = process.argv[3].match(/(\w+).json/)[1];
+		platformCopyTask.push(copyTasks[platform]);
+		platformTask.push(tasks[platform]);
+	}
 }
 
 gulp.task("loadConfig", function (cb) {

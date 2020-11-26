@@ -24,7 +24,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
     "del": "^6.0.0",
+    "es6toes5": "^1.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-uglify-es": "^2.0.0",
     "iconv-lite": "^0.6.2",
@@ -32,6 +34,9 @@
   },
   "scripts": {
     "publish": "gulp publish",
+    "publish_qqgame": "gulp buildQQProj --config qqgame.json",
+    "publish_web": "gulp publish --config web.json",
+    "publish_wxgame": "gulp buildWXProj --config wxgame.json",
     "compile": "gulp compile --max_old_space_size=4096",
     "test": "gulp --tasks"
   },
